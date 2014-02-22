@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+var currentGame = 1;
+ 
+function compare(choice1, choice2)
+{
+	if (choice1 === choice2)
+		return "The result is a tie!";
+		
+	if (choice1 === "rock")
+		return choice2 === "scissors" ? "rock wins" : "paper wins";
+ 
+	if (choice1 === "paper")
+		return choice2 === "scissors" ? "scissors wins" : "paper wins";
+		
+	if (choice1 === "scissors")
+		return choice2 === "rock" ? "rock wins" : "scissors wins";
+};
+ 
+function playGame()
+{
+	var userChoice = prompt ("Do you choose rock, paper or scissors?");
+	if (userChoice === null) // The user clicked cancel, stop playing.
+		return;
+		
+	userChoice = userChoice.toLowerCase();	
+	var computerChoice = Math.random();
+ 
+	if (computerChoice < 0.34)
+		computerChoice = "rock";
+	else if (computerChoice <= 0.67)
+		computerChoice = "paper";
+	else
+		computerChoice = "scissors";
+ 
+	document.write("Result of game " + currentGame + ": " + compare(userChoice, computerChoice) + "<br>");
+	currentGame++;
+	playGame();
+}
+playGame();
+</script>
+</body>
+</html>
