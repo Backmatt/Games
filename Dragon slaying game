@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dragon slaying game</title>
+<style>
+p{
+color:red;
+}
+</style>
+<script>
+var slaying = true;
+var youHit = Math.floor(Math.random() * 2);
+var damageThisRound = Math.floor(Math.random() * 5 + 1);
+var totalDamage = 0;
+
+while (slaying) {
+  if (youHit) {
+    document.write("You hit the dragon and did " + damageThisRound + " damage!");
+    totalDamage += damageThisRound;
+    
+    if (totalDamage >= 4) {
+      document.write("You did it! You slew the dragon!" + "<br>" + "<br>");
+      slaying = false;
+    } else {
+      youHit = Math.floor(Math.random() * 2);
+    }
+  } else {
+    document.write("The dragon burninates you! You're toast." + "<br>" + "<br>");
+    slaying = false;
+  }
+}
+setTimeout(function() { window.location.reload();}, 2500);
+</script>
+</head>
+<body>
+<p>When you finish the game wait a minute and the tab will reload and you can play again.</p>
+</body>
+</html>
