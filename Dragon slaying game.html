@@ -15,17 +15,17 @@ var totalDamage = 0;
 
 while (slaying) {
   if (youHit) {
-    document.write("You hit the dragon and did " + damageThisRound + " damage!");
+    document.write("You hit the dragon with your and did " + damageThisRound + " damage!");
     totalDamage += damageThisRound;
     
     if (totalDamage >= 4) {
-      document.write("You did it! You slew the dragon!" + "<br>" + "<br>");
+      document.write("You did it! You killed the dragon!" + "<br>" + "<br>");
       slaying = false;
     } else {
       youHit = Math.floor(Math.random() * 2);
     }
   } else {
-    document.write("The dragon burninates you! You're toast." + "<br>" + "<br>");
+    document.write("The dragon burns you! You're toast." + "<br>" + "<br>");
     slaying = false;
   }
 }
